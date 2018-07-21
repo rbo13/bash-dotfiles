@@ -30,6 +30,11 @@ alias gpr-b="git pull-request -b"
 alias gpom-rb="git pull origin master --rebase"
 alias gb="g branch"
 
+# go Related
+alias gt-v="go test -v ./..."
+alias gt-c="go test -coverprofile=cover.out"
+alias gtc-h="go tool cover -html=cover.out"
+
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
