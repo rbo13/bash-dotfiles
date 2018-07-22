@@ -30,7 +30,16 @@ alias gpr-b="git pull-request -b"
 alias gpom-rb="git pull origin master --rebase"
 alias gb="g branch"
 
-# go Related
+# Misc
+alias cls="clear"
+alias cc="echo 'flush_all' | nc localhost 11211"
+alias f="fresh"
+alias start="brew services start mysql@5.6 && brew services start redis && brew services start memcached"
+alias stop="brew services stop mysql@5.6 && brew services stop redis && brew services stop memcached"
+alias list="brew services list"
+alias refresh="source ~/.bashrc"
+
+# go related
 alias gt-v="go test -v ./..."
 alias gt-c="go test -coverprofile=cover.out"
 alias gtc-h="go tool cover -html=cover.out"
