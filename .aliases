@@ -29,6 +29,8 @@ alias gr="git rebase"
 alias gpr-b="git pull-request -b"
 alias gpom-rb="git pull origin master --rebase"
 alias gb="g branch"
+alias gpf="g push origin -f"
+alias gdel="g branch -d"
 
 # Misc
 alias cls="clear"
