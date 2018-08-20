@@ -111,6 +111,7 @@ brew cask install firefox
 
 # Install applications using cask
 brew cask install spotify
+brew cask install slack
 brew cask install transmission
 brew cask install sequel-pro
 
