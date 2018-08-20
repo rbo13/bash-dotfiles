@@ -110,6 +110,8 @@ brew cask install google-chrome-canary
 brew cask install firefox
 
 # Install applications using cask
+brew cask install dash
+brew cask install vlc
 brew cask install spotify
 brew cask install slack
 brew cask install transmission
