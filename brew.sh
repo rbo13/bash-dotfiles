@@ -111,6 +111,7 @@ brew cask install firefox
 
 # Install applications using cask
 brew cask install dash
+brew cask install insomnia
 brew cask install vlc
 brew cask install spotify
 brew cask install slack
