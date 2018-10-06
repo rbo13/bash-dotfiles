@@ -10,7 +10,7 @@ set clipboard=unnamed
 " Enhance command-line completion
 set wildmenu
 " Allow cursor keys in insert mode
-set esckeys
+" set esckeys
 " Allow backspace in insert mode
 set backspace=indent,eol,start
 " Optimize for fast terminal connections
@@ -19,8 +19,7 @@ set ttyfast
 set gdefault
 " Use UTF-8 without BOM
 set encoding=utf-8 nobomb
-" Change mapleader
-let mapleader=","
+
 " Don’t add empty newlines at the end of files
 set binary
 set noeol
@@ -48,6 +47,10 @@ syntax on
 set cursorline
 " Make tabs as wide as two spaces
 set tabstop=2
+set softtabstop=2              " │ Set global <TAB> settings.
+set shiftwidth=2               " │
+set expandtab                  " ┘
+
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 set list
@@ -83,6 +86,41 @@ endif
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 
+" Prevent arrow keys on normal mode
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+" Change mapleader
+let mapleader=","
+
+" NERDTree
+nmap <leader>t :NERDTreeToggle<cr>
+
+" Vim Airline
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline_theme='angr'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tab_type = 1
+
+
+" Go
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_command = "goimports"
+
+" Clear highlight search
+map <leader>c :nohlsearch<cr>
+
+
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
 	let save_cursor = getpos(".")
@@ -95,6 +133,18 @@ noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
+" Ale
+let g:ale_linters = {
+\   'go': ['go build', 'gofmt', 'golint', 'go vet'],
+\}
+
+" Navigating through omni-completion
+inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
+inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
+
+" Preventing `Enter` Key in creating new line
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
 " Automatic commands
 if has("autocmd")
 	" Enable file type detection
@@ -104,3 +154,4 @@ if has("autocmd")
 	" Treat .md files as Markdown
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
+
