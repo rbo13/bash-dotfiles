@@ -84,6 +84,9 @@ brew install memcached
 # install Golang
 brew install go
 
+# install Python3
+brew install python3
+
 # install mysql5.6
 brew install mysql@5.6
 
