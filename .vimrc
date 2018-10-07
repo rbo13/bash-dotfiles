@@ -9,6 +9,8 @@ set nocompatible
 set clipboard=unnamed
 " Enhance command-line completion
 set wildmenu
+" Set wildmode
+set wildmode=list:longest,full
 " Allow cursor keys in insert mode
 " set esckeys
 " Allow backspace in insert mode
@@ -70,6 +72,9 @@ set noerrorbells
 set nostartofline
 " Show the cursor position
 set ruler
+" Show ruler on steroids
+set rulerformat=%30(%=\\:b%n%y%m%r%w\\ %l,%c%V\\ %P%)
+
 " Don’t show the intro message when starting Vim
 set shortmess=atI
 " Show the current mode
@@ -137,6 +142,8 @@ noremap <leader>W :w !sudo tee % > /dev/null<CR>
 let g:ale_linters = {
 \   'go': ['go build', 'gofmt', 'golint', 'go vet'],
 \}
+
+set completeopt=longest,menuone,preview
 
 " Navigating through omni-completion
 inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
