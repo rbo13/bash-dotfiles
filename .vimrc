@@ -35,6 +35,9 @@ endif
 " Don’t create backups when editing files in certain directories
 set backupskip=/tmp/*,/private/tmp/*
 
+
+" Use <Space> to search instead of < / > 
+map <space> /
 " Respect modeline in files
 set modeline
 set modelines=4
