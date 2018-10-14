@@ -9,8 +9,6 @@ set nocompatible
 set clipboard=unnamed
 " Enhance command-line completion
 set wildmenu
-" Set wildmode
-set wildmode=list:longest,full
 " Allow cursor keys in insert mode
 " set esckeys
 " Allow backspace in insert mode
@@ -21,7 +19,8 @@ set ttyfast
 set gdefault
 " Use UTF-8 without BOM
 set encoding=utf-8 nobomb
-
+" Set wildmode
+set wildmode=list:longest,full
 " Don’t add empty newlines at the end of files
 set binary
 set noeol
@@ -35,9 +34,6 @@ endif
 " Don’t create backups when editing files in certain directories
 set backupskip=/tmp/*,/private/tmp/*
 
-
-" Use <Space> to search instead of < / > 
-map <space> /
 " Respect modeline in files
 set modeline
 set modelines=4
@@ -50,14 +46,19 @@ set number
 syntax on
 " Highlight current line
 set cursorline
+" Change cursor to huge underline
+hi clear CursorLine
+hi CursorLine gui=underline cterm=underline
 " Make tabs as wide as two spaces
 set tabstop=2
 set softtabstop=2              " │ Set global <TAB> settings.
 set shiftwidth=2               " │
 set expandtab                  " ┘
 
+" Search using <Space> instead of < / >
+map <space> /
 " Show “invisible” characters
-set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+set lcs=tab:›\ ,trail:•,eol:¬,nbsp:.
 set list
 " Highlight searches
 set hlsearch
@@ -75,9 +76,8 @@ set noerrorbells
 set nostartofline
 " Show the cursor position
 set ruler
-" Show ruler on steroids
-set rulerformat=%30(%=\\:b%n%y%m%r%w\\ %l,%c%V\\ %P%)
-
+" Ruler on steroids
+set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 " Don’t show the intro message when starting Vim
 set shortmess=atI
 " Show the current mode
@@ -86,13 +86,23 @@ set showmode
 set title
 " Show the (partial) command as it’s being typed
 set showcmd
+
+set completeopt=longest,menuone,preview
+
 " Use relative line numbers
 if exists("&relativenumber")
 	set relativenumber
 	au BufReadPost * set relativenumber
 endif
+
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
+" Switch between buffers
+map <C-J> :bprev<CR>
+map <C-K> :bnext<CR>
+map <C-L> :tabn<CR>
+map <C-H> :tabp<CR>
+
 
 " Prevent arrow keys on normal mode
 noremap <Up> <Nop>
@@ -105,6 +115,12 @@ let mapleader=","
 
 " NERDTree
 nmap <leader>t :NERDTreeToggle<cr>
+
+" Clear highlight search
+map <leader>c :nohlsearch<cr>
+
+" Close current buffer
+map <leader>w :bd<cr>
 
 " Vim Airline
 let g:airline#extensions#tabline#left_sep = ' '
@@ -124,9 +140,7 @@ let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
-
-" Clear highlight search
-map <leader>c :nohlsearch<cr>
+let g:go_list_type = "quickfix"
 
 
 " Strip trailing whitespace (,ss)
@@ -146,8 +160,6 @@ let g:ale_linters = {
 \   'go': ['go build', 'gofmt', 'golint', 'go vet'],
 \}
 
-set completeopt=longest,menuone,preview
-
 " Navigating through omni-completion
 inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
 inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
@@ -164,4 +176,6 @@ if has("autocmd")
 	" Treat .md files as Markdown
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
+
+
 
