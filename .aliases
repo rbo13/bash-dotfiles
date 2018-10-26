@@ -46,6 +46,10 @@ alias gt-v="go test -v ./..."
 alias gt-c="go test -coverprofile=cover.out"
 alias gtc-h="go tool cover -html=cover.out"
 
+# Docker-Compose
+alias down="docker-compose down" 
+alias up="docker-compose up" 
+alias build="docker-compose build" 
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
