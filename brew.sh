@@ -111,18 +111,5 @@ brew install tree
 brew install vbindiff
 brew install zopfli
 
-# Install browsers using cask
-brew cask install google-chrome-canary
-brew cask install firefox
-
-# Install applications using cask
-brew cask install dash
-brew cask install insomnia
-brew cask install vlc
-brew cask install spotify
-brew cask install slack
-brew cask install transmission
-brew cask install sequel-pro
-
 # Remove outdated versions from the cellar.
 brew cleanup
