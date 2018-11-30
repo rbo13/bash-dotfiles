@@ -91,8 +91,8 @@ brew install go
 # install Python3
 brew install python3
 
-# install mysql5.6
-brew install mysql@5.6
+# install mysql5.7
+brew install mysql@5.7
 
 # Install other useful binaries.
 brew install ack
@@ -111,6 +111,7 @@ brew install ssh-copy-id
 brew install tree
 brew install vbindiff
 brew install zopfli
+brew install brotli
 
 # Remove outdated versions from the cellar.
 brew cleanup
