@@ -112,6 +112,7 @@ brew install tree
 brew install vbindiff
 brew install zopfli
 brew install brotli
+brew install telnet
 
 # Remove outdated versions from the cellar.
 brew cleanup
