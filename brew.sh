@@ -41,7 +41,8 @@ brew install wget --with-iri
 brew install gnupg
 
 # Install more recent versions of some macOS tools.
-brew install vim --with-override-system-vi --with-lua --with-luajit --with-python3
+# brew install vim --with-override-system-vi --with-lua --with-luajit --with-python3
+brew install neovim
 brew install grep
 brew install openssh
 brew install screen
