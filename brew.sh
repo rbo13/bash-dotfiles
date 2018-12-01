@@ -12,7 +12,6 @@ brew update
 # Upgrade any already-installed formulae.
 brew upgrade
 
-
 # Install latest git
 brew install git
 
@@ -99,7 +98,8 @@ brew install python3
 brew install mysql@5.7
 
 # Install other useful binaries.
-brew install ack
+# brew install ack
+brew install the_silver_searcher
 #brew install exiv2
 brew install git-lfs
 brew install imagemagick --with-webp
