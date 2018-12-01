@@ -7,6 +7,9 @@ brew update
 # Upgrade necessary tools
 brew upgrade
 
+# Development
+brew cask install docker
+
 # Browsers
 # brew cask install google-chrome-canary
 brew cask install firefox
