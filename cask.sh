@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+
+
 # Make sure we update homebrew
 brew update
 
