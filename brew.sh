@@ -12,6 +12,10 @@ brew update
 # Upgrade any already-installed formulae.
 brew upgrade
 
+
+# Install latest git
+brew install git
+
 # Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
@@ -97,7 +101,6 @@ brew install mysql@5.7
 # Install other useful binaries.
 brew install ack
 #brew install exiv2
-brew install git
 brew install git-lfs
 brew install imagemagick --with-webp
 brew install lua
