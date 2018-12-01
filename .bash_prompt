@@ -45,9 +45,9 @@ prompt_git() {
 			fi;
 
 			# Check if we need to pull.
-			# if [ `git rev-list HEAD...origin/master --count` != 0 ]; then
-			# 	s+='⇣';
-			# fi;
+			if ! (git diff --quiet remotes/origin/HEAD); then
+			 	s+='⇣';
+			fi;
 
 		fi;
 
