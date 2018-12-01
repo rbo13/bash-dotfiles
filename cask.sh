@@ -18,6 +18,7 @@ brew cask install firefox
 brew cask install dash
 brew cask install insomnia
 brew cask install sequel-pro
+brew cask install keybase
 
 # Install productivity
 brew cask install slack
