@@ -16,6 +16,9 @@ alias p="cd ~/projects"
 alias g="git"
 # alias git="hub"
 
+# Nice to have
+alias nice='sudo $(history -p \!\!)'
+
 # git related
 # alias g!= "g init"
 # alias ga="git add"
