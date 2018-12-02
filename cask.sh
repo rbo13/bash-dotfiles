@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 # Make sure we update homebrew
 brew update
 
@@ -11,7 +10,6 @@ brew upgrade
 brew cask install docker
 
 # Browsers
-# brew cask install google-chrome-canary
 brew cask install firefox
 
 # Install utils app
