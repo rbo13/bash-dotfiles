@@ -118,6 +118,7 @@ brew install zopfli
 brew install brotli
 brew install telnet
 brew install rsync
+brew install tmux
 
 # Remove outdated versions from the cellar.
 brew cleanup
