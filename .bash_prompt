@@ -115,7 +115,7 @@ fi;
 # Set the terminal title and prompt.
 PS1="\[${bold}\]\n"; # newline
 PS1+="\[${bold}${blue}\]\w"; # working directory full path
-PS1+="\$(prompt_git \"\[${white}\] on \[${cyan}\]\" \"\[${red}\]\")"; # Git repository details
+PS1+="\$(prompt_git \"\[${white}\] on \[${cyan}\](\" \")\[${red}\]\")"; # Git repository details
 PS1+="\n";
 PS1+="\[${bold}${light_green}\]➜ \[${reset}\]"; # `➜` (and reset color)
 export PS1;
