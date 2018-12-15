@@ -43,5 +43,8 @@ set convert-meta off
 # Allow editing in vi mode when using the terminal
 set editing-mode vi
 
+# Set keymap for when we're in command mode (e.g., after hitting ESC)
+set keymap vi-command
+
 # Use Alt/Meta + Delete to delete the preceding word
 "\e[3;3~": kill-word
