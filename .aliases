@@ -8,6 +8,8 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
+alias hosts='sudo $EDITOR /etc/hosts' # edit /etc/hosts using the default editor i.e, neovim
+
 # Shortcuts
 alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
