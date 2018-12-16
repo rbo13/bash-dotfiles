@@ -16,6 +16,7 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
 alias g="git"
+alias cask="brew cask"
 # alias git="hub"
 
 # Nice to have
