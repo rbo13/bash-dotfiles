@@ -73,6 +73,7 @@ When setting up a new Mac, you may want to set some sensible macOS defaults:
 ./.macos
 ```
 
+------
 
 ### Install everything
 
