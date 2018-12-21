@@ -73,6 +73,36 @@ When setting up a new Mac, you may want to set some sensible macOS defaults:
 ./.macos
 ```
 
+------
+
+### Install everything
+
+I've provided the install script to install everything I need in my development:
+
+```bash
+./install.sh
+```
+
+> Or you could just do it manually by running the scripts below:
+
+### Python3 installation using pip3
+
+> NOTE: This script is work in progress, but this script should work as expected. I will add some here later on.
+
+
+```bash
+./pip3.sh
+```
+
+
+### Some utility installations
+
+> Utitility script that doesn't need to be on the main installation. But you can check this one.
+
+```bash
+./utils.sh
+```
+
 ### Install Homebrew formulae
 
 When setting up a new Mac, you may want to install some common [Homebrew](https://brew.sh/) formulae (after installing Homebrew, of course):
