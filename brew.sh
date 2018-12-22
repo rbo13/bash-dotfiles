@@ -116,6 +116,7 @@ brew install tree
 brew install vbindiff
 brew install zopfli
 brew install brotli
+brew install zstd
 brew install telnet
 brew install rsync
 brew install tmux
