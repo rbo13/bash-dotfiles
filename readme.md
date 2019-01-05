@@ -1,6 +1,6 @@
 # Richard’s dotfiles
 
-![Screenshot of my shell prompt](https://user-images.githubusercontent.com/10726631/50379800-ad0ddb80-068e-11e9-9a26-7fff30398593.png)
+![Screenshot of my shell prompt](https://user-images.githubusercontent.com/10726631/50718726-9ecbb080-10cd-11e9-9786-67bd4aa4286b.png)
 
 ## Installation
 
