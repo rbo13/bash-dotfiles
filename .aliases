@@ -21,6 +21,7 @@ alias cask="brew cask"
 
 # Nice to have
 alias nice='sudo $(history -p \!\!)'
+alias :q='exit'
 
 # git related
 # alias g!= "g init"
