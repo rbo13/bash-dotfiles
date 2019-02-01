@@ -42,7 +42,7 @@ set ignorecase                 " Ignore case in search patterns.
 set incsearch                  " Highlight search pattern
                                " as it is being typed.
 
-set listchars=tab:▸\             " ┐
+set listchars=tab:»·             " ┐
 set listchars+=trail:·           " │ Use custom symbols to
 " set listchars+=eol:↴           " │ represent invisible characters.
 " set listchars+=nbsp:_          " ┘
