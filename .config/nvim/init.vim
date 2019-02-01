@@ -20,6 +20,8 @@ set tabstop=2                  " ┐
 set softtabstop=2              " │ Set global <TAB> settings.
 set shiftwidth=2							 " │
 set expandtab                  " ┘
+set smartindent
+set autoindent
 
 set visualbell                 " ┐
 set noerrorbells               " │ Disable beeping and window flashing
