@@ -41,6 +41,7 @@ alias :q='exit'
 
 # Misc
 alias cls="clear"
+alias cs="cls"
 
 
 # Go related
