@@ -40,13 +40,8 @@ alias :q='exit'
 # alias gdel="g branch -d"
 
 # Misc
-# alias cls="clear"
-# alias cc="echo 'flush_all' | nc localhost 11211"
-# alias f="fresh"
-# alias start="brew services start mysql@5.6 && brew services start redis && brew services start memcached"
-# alias stop="brew services stop mysql@5.6 && brew services stop redis && brew services stop memcached"
-# alias list="brew services list"
-# alias refresh="source ~/.bashrc"
+alias cls="clear"
+
 
 # Go related
 # alias gt-v="go test -v -count=1 ./..."
