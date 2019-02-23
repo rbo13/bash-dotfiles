@@ -24,7 +24,9 @@ brew cask install spotify
 
 # Others
 brew cask install transmission
-brew cask install vlc
+brew cask install iina
+# brew cask install vlc
+
 
 # Remove outdated versions from the cellar.
 brew cleanup
