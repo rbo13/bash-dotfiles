@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-# Make vim the default editor.
+# GO MODULE
+export GO111MODULE=off
+
+# Make neovim the default editor.
 # export EDITOR='vim';
 # Make neovim the default editor instead of vim.
 export EDITOR='nvim';
