@@ -31,6 +31,9 @@ brew install gnu-sed --with-default-names
 brew install bash
 brew install bash-completion2
 
+# Install `jq`
+brew install jq
+
 
 # Switch to using brew-installed bash as default shell
 if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
