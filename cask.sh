@@ -11,6 +11,7 @@ brew cask install docker
 
 # Browsers
 brew cask install firefox
+brew cask install brave-browser
 
 # Install utils app
 brew cask install dash
