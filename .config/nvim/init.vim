@@ -270,6 +270,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ggreer/the_silver_searcher'
 Plug 'zivyangll/git-blame.vim'
+Plug 'terryma/vim-multiple-cursors'
 " End installation of plugins
 
 " Initialize plugin system
