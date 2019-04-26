@@ -121,6 +121,10 @@ let g:go_list_type = "quickfix"
 let g:go_auto_sameids = 1
 let g:go_auto_type_info = 1
 let g:go_snippet_engine = "neosnippet"
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+
+
 
 " Ale
 let g:ale_linters = {
