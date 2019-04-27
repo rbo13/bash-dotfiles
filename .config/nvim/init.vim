@@ -99,7 +99,7 @@ noremap <Right> <Nop>
 nnoremap j gj
 nnoremap k gk
 
-nnoremap <C-N> :bnext<CR>
+nnoremap <C-D> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
 
 " End General settings
