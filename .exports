@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Go Stuff
+export GOPATH=$HOME/dev/go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
 # GO MODULE
 export GO111MODULE=off
 
