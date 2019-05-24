@@ -18,7 +18,7 @@ brew cask install dash
 brew cask install insomnia
 brew cask install sequel-pro
 brew cask install keybase
-brew cask install amethyst
+# brew cask install amethyst
 
 # Install productivity
 brew cask install slack
