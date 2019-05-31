@@ -85,6 +85,7 @@ brew install tcptrace
 brew install ucspi-tcp # `tcpserver` etc.
 brew install xpdf
 brew install xz
+brew install neofetch
 
 # others
 brew install node
