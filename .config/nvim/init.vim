@@ -128,7 +128,7 @@ let g:go_info_mode='gopls'
 
 " Ale
 let g:ale_linters = {
-\   'go': ['gofmt', 'golint', 'go vet'],
+\   'go': ['gofmt', 'golint', 'go vet', 'gopls'],
 \}
 
 let g:ale_sign_error = '⤫'
