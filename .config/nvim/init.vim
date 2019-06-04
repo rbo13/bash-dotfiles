@@ -248,6 +248,9 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 Plug 'connorholyday/vim-snazzy'
 
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
@@ -275,6 +278,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'ggreer/the_silver_searcher'
 Plug 'zivyangll/git-blame.vim'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
 " End installation of plugins
 
 " Initialize plugin system
