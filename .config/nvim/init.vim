@@ -248,6 +248,9 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 Plug 'connorholyday/vim-snazzy'
 
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
