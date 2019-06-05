@@ -250,6 +250,10 @@ Plug 'connorholyday/vim-snazzy'
 
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
@@ -284,6 +288,17 @@ Plug 'ncm2/ncm2-path'
 
 " Initialize plugin system
 call plug#end()
+
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" configure for lsp, new kid on the block.
+" Launch gopls when Go files are in use
+let g:LanguageClient_serverCommands = {
+       \ 'go': ['gopls']
+       \ }
+" Run gofmt and goimports on save
+autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
 
 
 
