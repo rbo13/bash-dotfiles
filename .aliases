@@ -43,6 +43,14 @@ alias :q='exit'
 alias cls="clear"
 alias cs="cls"
 
+# mv, rm, cp
+alias mv='mv -v'
+alias rm='rm -i -v'
+alias cp='cp -v'
+
+# editor
+alias vi="nvim"
+
 
 # Go related
 # alias gt-v="go test -v -count=1 ./..."
