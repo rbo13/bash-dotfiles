@@ -353,3 +353,6 @@ nnoremap <leader>a :Ag<space>
 " Mappings
 au FileType go nmap <leader>gt :GoDeclsDir<cr>
 au FileType go nmap <leader>gd <Plug>(go-def)
+au FileType go nmap gc <Plug>(go-coverage-toggle)
+au FileType go nmap gt <Plug>(go-test)
+au FileType go nmap gr <Plug>(go-run)
