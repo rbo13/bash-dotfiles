@@ -17,6 +17,8 @@ alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
 alias g="git"
 alias cask="brew cask"
+alias where=which # sometimes i forget
+alias brwe=brew  #typos
 # alias git="hub"
 
 # Nice to have
