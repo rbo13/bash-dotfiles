@@ -1,3 +1,6 @@
+" Colorscheme
+colorscheme molokai
+
 " Load runtime path
 set runtimepath^=~/.vim runtimepath+=~/.vim/after runtimepath+=/usr/local/opt/fzf
 let &packpath = &runtimepath
@@ -64,6 +67,9 @@ set backspace=indent,eol,start
 " Optimize for fast terminal connections
 set ttyfast
 
+" Optimal terminal color
+set termguicolors
+
 " Use <Space> to search
 map <space> /
 
@@ -100,12 +106,13 @@ nnoremap j gj
 nnoremap k gk
 
 nnoremap <C-D> :bnext<CR>
-nnoremap <C-P> :bprev<CR>
+nnoremap <C-S> :bprev<CR>
 
 " End General settings
 
 
 " ---------------------------------------------------------
+let NERDTreeShowHidden=1
 
 " Language specific settings
 
@@ -128,10 +135,13 @@ let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 
 
+" Rust
+let g:rustfmt_autosave = 1
+
 
 " Ale
 let g:ale_linters = {
-\   'go': ['gofmt', 'golint', 'go vet', 'gopls'],
+\   'go': ['gopls', 'golint', 'go vet'],
 \}
 
 let g:ale_sign_error = '⤫'
@@ -139,6 +149,7 @@ let g:ale_sign_warning = '⚠'
 
 " silver_searcher
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
 
 " End language specific settings
 
@@ -180,6 +191,10 @@ function! ToggleRelativeLineNumbers()
 
 endfunction
 
+function! CocCurrentFunction()
+    return get(b:, 'coc_current_function', '')
+endfunction
+
 " End Helper Functions
 " ----------------------------------------------------------------------
 
@@ -191,7 +206,7 @@ let mapleader=","
 " NERDTree
 nmap <leader>t :NERDTreeToggle<cr>
 " Clear highlight search
-map <leader>c :nohlsearch<cr>
+map <leader>cs :nohlsearch<cr>
 " Close current buffer
 map <leader>w :bd<cr>
 " [,* ] Search and replace the word under the cursor.
@@ -248,16 +263,7 @@ nnoremap <c-p> :FZF<cr>
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-" Make sure you use single quotes
-Plug 'connorholyday/vim-snazzy'
-
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
@@ -265,19 +271,14 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tomtom/tcomment_vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'itchyny/lightline.vim'
 Plug 'w0rp/ale'
+Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
-Plug 'Shougo/deoplete.nvim'
-Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
 Plug 'ap/vim-buftabline'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -285,32 +286,22 @@ Plug 'junegunn/fzf.vim'
 Plug 'ggreer/the_silver_searcher'
 Plug 'zivyangll/git-blame.vim'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
+Plug 'rust-lang/rust.vim'
+Plug 'sebdah/vim-delve'
 " End installation of plugins
 
 " Initialize plugin system
 call plug#end()
 
-" enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
-
-" configure for lsp, new kid on the block.
-" Launch gopls when Go files are in use
-let g:LanguageClient_serverCommands = {
-       \ 'go': ['gopls']
-       \ }
-" Run gofmt and goimports on save
-autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
-
-
+autocmd FileType json syntax match Comment +\/\/.\+$+
+autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 
 " Status line for `lightline`
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 let g:lightline = {}
 
-let g:lightline.colorscheme = 'landscape'
+let g:lightline.colorscheme = 'wombat'
 
 let g:lightline.component_expand = {
       \  'linter_checking': 'lightline#ale#checking',
@@ -332,11 +323,10 @@ let g:lightline.active = { 'right': [[ 'fileformat', 'fileencoding', 'percent', 
 
 let g:lightline.component_function = {
       \     'gitbranch': 'fugitive#head',
+			\			'cocstatus': 'coc#status',
+			\			'currentfunction': 'CocCurrentFunction'
       \ }
 " End status line
-
-" Enable deoplete on startup
-let g:deoplete#enable_at_startup = 1
 
 "----------------------------------------------
 " Plugin: 'ctrlpvim/ctrlp.vim'
@@ -358,4 +348,5 @@ au FileType go nmap <leader>gt :GoDeclsDir<cr>
 au FileType go nmap <leader>gd <Plug>(go-def)
 au FileType go nmap gc <Plug>(go-coverage-toggle)
 au FileType go nmap gt <Plug>(go-test)
+au FileType go nmap gf <Plug>(go-test-func)
 au FileType go nmap gr <Plug>(go-run)
